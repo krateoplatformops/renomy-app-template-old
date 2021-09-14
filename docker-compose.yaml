@@ -19,7 +19,7 @@ services:
     image: api
     restart: always
     build:
-      context: ./api/
+      context: ./packages/api/
     ports:
       - 8080:8080
     environment:
@@ -40,7 +40,7 @@ services:
     image: app
     restart: always
     build:
-      context: ./app/
+      context: ./packages/app/
     ports:
       - 3000:3000
     environment:
