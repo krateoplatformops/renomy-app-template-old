@@ -8,12 +8,7 @@ FROM node:15
 # ENV DB_PASSWORD "AlienPassword123"
 # ENV DB_NAME "mysqltst"
 
-WORKDIR /usr/src/app
-
-COPY package*.json ./
-RUN npm ci --only=production
-
-COPY . .
-
-EXPOSE 8080
+WORKDIR /app
+COPY . ./
+RUN yarn
 CMD [ "node", "index.js" ]
