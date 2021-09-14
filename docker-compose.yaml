@@ -1,0 +1,47 @@
+version: '3'
+
+services:
+  mysql:
+    container_name: mysql
+    image: mysql
+    restart: always
+    ports:
+      - '3306:3306'
+    environment:
+      - MYSQL_USER=admin
+      - MYSQL_PASSWORD=AlienPassword1234
+      - MYSQL_DATABASE=mysqltst
+      - MYSQL_ROOT_PASSWORD=AlienPassword1234
+  api:
+    container_name: api
+    depends_on:
+      - mysql
+    image: api
+    restart: always
+    build:
+      context: ./api/
+    ports:
+      - 8080:8080
+    environment:
+      - PORT=8080
+      - HOST=0.0.0.0
+      - DB_HOST=mysql
+      - DB_PORT=3306
+      - DB_USERNAME=admin
+      - DB_PASSWORD=AlienPassword1234
+      - DB_NAME=mysqltst
+    volumes:
+      - ./logs:/usr/src/app/logs
+  app:
+    container_name: app
+    depends_on:
+      - mysql
+      - api
+    image: app
+    restart: always
+    build:
+      context: ./app/
+    ports:
+      - 3000:3000
+    environment:
+      - REACT_APP_API_URL=http://localhost:8080/
