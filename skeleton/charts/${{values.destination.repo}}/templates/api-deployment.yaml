@@ -32,7 +32,6 @@ spec:
                 secretKeyRef:
                   name: rdsmariadbql-conn
                   key: endpoint
-                  namespace: crossplane-system
             - name: DB_PORT
               valueFrom:
                 secretKeyRef:

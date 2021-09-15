@@ -27,7 +27,7 @@ spec:
     masterPasswordSecretRef:
       key: password
       name: rdsmariadbql-conn
-      namespace: crossplane-system
+      namespace: {{ .Release.Namespace }}
     multiAZ: false
     skipFinalSnapshotBeforeDeletion: true
     port: 3306
