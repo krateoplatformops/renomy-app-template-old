@@ -19,8 +19,6 @@ spec:
       required:
         - component_id
         - description
-        # - dbHost
-        # - dBPort
         - dbUsername
         - dbPassword
       properties:
@@ -32,15 +30,6 @@ spec:
           title: Description
           type: string
           description: Help others understand what this service does.
-        # dbHost:
-        #   title: Database Host
-        #   type: string
-        #   description: Database Host
-        # dbPort:
-        #   title: Database port
-        #   type: string
-        #   description: Database Port
-        #   default: 3306
         dbUsername:
           title: Database Username
           type: string
@@ -74,8 +63,6 @@ spec:
         values:
           component_id: "{{ parameters.component_id }}"
           description: "{{ parameters.description }}"
-          # dbHost: "{{ parameters.dbHost }}"
-          # dbPort: "{{ parameters.dbPort }}"
           dbUsername: "{{ parameters.dbUsername }}"
           dbPassword: "{{ parameters.dbPassword }}"
           destination: "{{ parseRepoUrl parameters.repoUrl }}"
