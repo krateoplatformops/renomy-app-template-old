@@ -27,7 +27,7 @@ spec:
     masterPasswordSecretRef:
       key: password
       name: rdsmariadbql-conn
-      namespace: {{ .Release.Namespace }}
+      namespace: crossplane-system
     multiAZ: false
     skipFinalSnapshotBeforeDeletion: true
     port: 3306
@@ -36,6 +36,6 @@ spec:
     storageType: standard
   writeConnectionSecretToRef:
     name: rdsmariadbql-conn
-    namespace: {{ .Release.Namespace }}
+    namespace: crossplane-system
   providerConfigRef:
     name: aws-stack-template-provider
