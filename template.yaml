@@ -6,7 +6,9 @@ metadata:
   description: Create a simple Demo App
   tags:
     - demo
-    - spring
+    - react
+    - node
+    - mysql
 spec:
   owner: mauro.sala@kiratech.it
   type: service
