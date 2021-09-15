@@ -17,7 +17,7 @@ services:
     depends_on:
       - mysql
     restart: always
-    image: ghcr.io/maurosala/snake-10_api
+    image: ghcr.io/maurosala/snake-11_api
     # image: api
     # build:
     #   context: ./skeleton/packages/api/
@@ -37,7 +37,7 @@ services:
       - mysql
       # - api
     restart: always
-    image: ghcr.io/maurosala/snake-10_app
+    image: ghcr.io/maurosala/snake-11_app
     # image: app
     # build:
     #   context: ./skeleton/packages/app/

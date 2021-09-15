@@ -9,10 +9,10 @@
 # REACT_APP_API_URL
 
 images:
-  # api: ghcr.io/projectkerberus/renomy-app-template_api:latest
-  # app: ghcr.io/projectkerberus/renomy-app-template_app:latest
-  api: maurosala/api
-  app: maurosala/app
+  api: ghcr.io/${{values.destination.owner + "/" + values.destination.repo}}_api:latest
+  app: ghcr.io/${{values.destination.owner + "/" + values.destination.repo}}_app:latest
+# api: maurosala/api
+# app: maurosala/app
 
 api:
   db:
