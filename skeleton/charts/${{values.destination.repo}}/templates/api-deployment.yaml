@@ -35,17 +35,17 @@ spec:
             - name: DB_PORT
               valueFrom:
                 secretKeyRef:
-                  name: renomy-secrets
+                  name: rdsmariadbql-conn
                   key: port
             - name: DB_USERNAME
               valueFrom:
                 secretKeyRef:
-                  name: renomy-secrets
+                  name: rdsmariadbql-conn
                   key: username
             - name: DB_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: renomy-secrets
+                  name: rdsmariadbql-conn
                   key: password
       volumes:
         - name: log-volume
