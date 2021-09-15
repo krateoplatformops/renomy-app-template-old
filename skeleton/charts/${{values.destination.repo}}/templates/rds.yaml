@@ -21,7 +21,6 @@ spec:
     enablePerformanceInsights: false
     engine: mariadb
     dbName: renomydb
-    dbSecurityGroups: ['sg-0416e7746bfd24244', 'sg-095929f38f40a3f75', 'sg-0644099ca471426fa']
     engineVersion: '10.4.13'
     licenseModel: general-public-license
     masterUsername: {{ .Values.api.db.username | quote }}
