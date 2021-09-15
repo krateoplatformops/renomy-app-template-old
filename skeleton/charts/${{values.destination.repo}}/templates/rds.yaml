@@ -36,6 +36,6 @@ spec:
     storageType: standard
   writeConnectionSecretToRef:
     name: rdsmariadbql-conn
-    namespace: crossplane-system
+    namespace: {{ .Release.Namespace }}
   providerConfigRef:
     name: aws-stack-template-provider
