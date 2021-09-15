@@ -1,0 +1,26 @@
+{{- if .Values.app }}
+---
+{{- end }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: renomy-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: renomy-app
+  template:
+    metadata:
+      labels:
+        app: renomy-app
+    spec:
+      containers:
+        - name: renomy-app
+          image: {{ .Values.images.app }}
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 3000
+          env:
+            - name: REACT_APP_API_URL
+              value: {{ .Values.app.api_url }}

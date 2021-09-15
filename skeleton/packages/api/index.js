@@ -156,4 +156,4 @@ app.all('*', (req, res, next) => {
 
 app.use('/', router)
 
-app.listen(process.env.PORT, process.env.HOST)
+app.listen(8080, '0.0.0.0')

@@ -1,0 +1,53 @@
+{{- if .Values.api }}
+---
+{{- end }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: renomy-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: renomy-api
+  template:
+    metadata:
+      labels:
+        app: renomy-api
+    spec:
+      containers:
+        - name: renomy-api
+          image: {{ .Values.images.api }}
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
+          volumeMounts:
+            - mountPath: /app/logs
+              name: log-volume
+          env:
+            - name: DB_NAME
+              value: {{ .Values.api.db.name }}
+            - name: DB_HOST
+              valueFrom:
+                secretKeyRef:
+                  name: rdsmariadbql-conn
+                  key: endpoint
+            - name: DB_PORT
+              valueFrom:
+                secretKeyRef:
+                  name: renomy-secrets
+                  key: port
+            - name: DB_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: renomy-secrets
+                  key: username
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: renomy-secrets
+                  key: password
+      volumes:
+        - name: log-volume
+          persistentVolumeClaim:
+            claimName: logs-pvc

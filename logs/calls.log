@@ -1,8 +1,0 @@
-{"time":"2021-09-14T13:17:08.314Z","method":"GET","path":"/todo"}
-{"time":"2021-09-14T13:17:13.730Z","method":"GET","path":"/todo"}
-{"time":"2021-09-14T13:17:17.496Z","method":"GET","path":"/todo"}
-{"time":"2021-09-14T13:17:19.541Z","method":"POST","path":"/todo"}
-{"time":"2021-09-14T13:17:23.286Z","method":"GET","path":"/todo"}
-{"time":"2021-09-14T13:17:26.644Z","method":"POST","path":"/todo"}
-{"time":"2021-09-14T13:17:31.686Z","method":"DELETE","path":"/todo"}
-{"time":"2021-09-14T13:17:33.833Z","method":"DELETE","path":"/todo"}
