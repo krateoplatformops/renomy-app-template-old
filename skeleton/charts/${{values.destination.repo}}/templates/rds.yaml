@@ -4,7 +4,7 @@
 apiVersion: database.aws.crossplane.io/v1beta1
 kind: RDSInstance
 metadata:
-  name: renomy-db
+  name: {{ .Release.Namespace }}
   labels:
     backstage.io/kubernetes-id: renomy
 spec:
@@ -34,6 +34,11 @@ spec:
     publiclyAccessible: true
     storageEncrypted: false
     storageType: standard
+    dbSubnetGroupName: default-vpc-0ba1a9b016ff1a396
+    vpcSecurityGroupIds:
+      - sg-0416e7746bfd24244
+      - sg-095929f38f40a3f75
+      - sg-0644099ca471426fa
   writeConnectionSecretToRef:
     name: rdsmariadbql-conn
     namespace: {{ .Release.Namespace }}
