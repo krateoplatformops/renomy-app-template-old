@@ -67,8 +67,6 @@ jobs:
       - name: get-npm-version
         id: package-version
         uses: martinbeentjes/npm-get-version-action@master
-        with:
-          path: packages/
       - name: Create Branch
         uses: peterjgrainger/action-create-branch@v2.0.1
         env:
@@ -91,8 +89,6 @@ jobs:
       - name: get-npm-version
         id: package-version
         uses: martinbeentjes/npm-get-version-action@master
-        with:
-          path: packages/
       - name: Bump release version
         id: bump_version
         uses: christian-draeger/increment-semantic-version@1.0.2

@@ -34,7 +34,7 @@ spec:
     publiclyAccessible: true
     storageEncrypted: false
     storageType: standard
-    dbSubnetGroupName: vpc-05929bad997b95384
+    dbSubnetGroupName: default-vpc-05929bad997b95384
     vpcSecurityGroupIds:
       - sg-0e3a39bcb458b6dbb
   writeConnectionSecretToRef:
