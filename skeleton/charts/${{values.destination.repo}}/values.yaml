@@ -22,4 +22,5 @@ api:
     # port: 3306
     # password: ${{values.dbPassword}}
 
-baseUrl: app.projectx.kiratech.biz
+appUrl: app.projectx.kiratech.biz
+apiUrl: api.projectx.kiratech.biz

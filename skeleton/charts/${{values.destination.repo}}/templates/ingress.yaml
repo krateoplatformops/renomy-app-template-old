@@ -10,16 +10,17 @@ metadata:
     cert-manager.io/cluster-issuer: 'test-selfsigned'
 spec:
   rules:
-    - host: {{ .Values.baseUrl }}
+    - host: {{ .Values.apiUrl }}
       http:
         paths:
-          - path: /api/*
-            pathType: Prefix
+          - path: /*
             backend:
               serviceName: api-svc
               servicePort: 8080
+    - host: {{ .Values.appUrl }}
+      http:
+        paths:
           - path: /*
-            pathType: Prefix
             backend:
               serviceName: app-svc
               servicePort: 3000
