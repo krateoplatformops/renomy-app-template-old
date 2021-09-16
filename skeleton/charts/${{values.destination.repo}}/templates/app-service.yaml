@@ -11,20 +11,3 @@ spec:
       protocol: TCP
   selector:
     app: renomy-app
----
-apiVersion: networking.k8s.io/v1beta1
-kind: Ingress
-metadata:
-  name: app-ingress
-  annotations:
-    kubernetes.io/ingress.class: 'kong'
-    cert-manager.io/cluster-issuer: 'test-selfsigned'
-spec:
-  rules:
-    - host: todo.projectx.kiratech.biz
-      http:
-        paths:
-          - path: /*
-            backend:
-              serviceName: app-svc
-              servicePort: 3000

@@ -16,11 +16,10 @@ images:
 
 api:
   db:
-    name: renomydb
-    host: mysqltst.ccdeexqykzxr.eu-central-1.rds.amazonaws.com
-    port: 3306
     username: ${{values.dbUsername}}
-    password: ${{values.dbPassword}}
+    name: renomydb
+    # host: mysqltst.ccdeexqykzxr.eu-central-1.rds.amazonaws.com
+    # port: 3306
+    # password: ${{values.dbPassword}}
 
-app:
-  api_url: https://api.projectx.kiratech.biz/
+baseUrl: app.projectx.kiratech.biz

@@ -1,0 +1,25 @@
+{{- if .Values.app }}
+---
+{{- end }}
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: renomy-ingress
+  annotations:
+    kubernetes.io/ingress.class: 'kong'
+    cert-manager.io/cluster-issuer: 'test-selfsigned'
+spec:
+  rules:
+    - host: {{ .Values.baseUrl }}
+      http:
+        paths:
+          - path: /api/*
+            pathType: Prefix
+            backend:
+              serviceName: api-svc
+              servicePort: 8080
+          - path: /*
+            pathType: Prefix
+            backend:
+              serviceName: app-svc
+              servicePort: 3000
