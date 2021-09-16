@@ -23,4 +23,4 @@ api:
     password: ${{values.dbPassword}}
 
 app:
-  api_url: http://api.projectx.kiratech.net/
+  api_url: https://api.projectx.kiratech.biz/
