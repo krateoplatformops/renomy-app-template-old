@@ -5,6 +5,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: renomy-api
+  labels: {{- include "common.labels.standard" . | nindent 4 }}
 spec:
   replicas: 1
   selector:

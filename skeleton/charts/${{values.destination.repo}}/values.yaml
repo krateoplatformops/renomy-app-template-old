@@ -11,16 +11,11 @@
 images:
   api: ghcr.io/${{values.destination.owner + "/" + values.destination.repo}}_api:latest
   app: ghcr.io/${{values.destination.owner + "/" + values.destination.repo}}_app:latest
-# api: maurosala/api
-# app: maurosala/app
 
 api:
   db:
     username: ${{values.dbUsername}}
     name: renomydb
-    # host: mysqltst.ccdeexqykzxr.eu-central-1.rds.amazonaws.com
-    # port: 3306
-    # password: ${{values.dbPassword}}
 
 appUrl: app.projectx.kiratech.biz
 apiUrl: api.projectx.kiratech.biz

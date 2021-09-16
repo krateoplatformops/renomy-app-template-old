@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: api-svc
+  labels: { { - include "common.labels.standard" . | nindent 4 } }
 spec:
   type: NodePort
   ports:
