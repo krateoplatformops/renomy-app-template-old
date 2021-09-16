@@ -34,11 +34,9 @@ spec:
     publiclyAccessible: true
     storageEncrypted: false
     storageType: standard
-    dbSubnetGroupName: default-vpc-0ba1a9b016ff1a396
+    dbSubnetGroupName: vpc-05929bad997b95384
     vpcSecurityGroupIds:
-      - sg-0416e7746bfd24244
-      - sg-095929f38f40a3f75
-      - sg-0644099ca471426fa
+      - sg-0e3a39bcb458b6dbb
   writeConnectionSecretToRef:
     name: rdsmariadbql-conn
     namespace: {{ .Release.Namespace }}

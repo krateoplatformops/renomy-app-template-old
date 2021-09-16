@@ -1,4 +1,5 @@
 const express = require('express')
+const helmet = require('helmet')
 const router = express.Router()
 const app = express()
 const cors = require('cors')({ origin: true })
@@ -18,6 +19,8 @@ const connection = mysql.createConnection({
 
 const logFile = 'logs/calls.log'
 
+app.use(helmet())
+
 router.use(express.json())
 
 router.get('/todo', (req, res) => {
@@ -30,8 +33,9 @@ router.get('/todo', (req, res) => {
           if (err) {
             console.log(err.message)
             res.status(200).send([])
+          } else {
+            res.status(200).send(results)
           }
-          res.status(200).send(results)
         }
       )
     } catch (err) {

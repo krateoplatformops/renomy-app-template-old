@@ -68,3 +68,15 @@
 {"time":"2021-09-14T13:04:23.153Z","method":"GET","path":"/todo"}
 {"time":"2021-09-14T13:04:24.378Z","method":"DELETE","path":"/todo"}
 {"time":"2021-09-14T13:04:24.828Z","method":"DELETE","path":"/todo"}
+{"time":"2021-09-15T15:36:42.403Z","method":"GET","path":"/"}
+{"time":"2021-09-15T15:36:45.619Z","method":"GET","path":"/ping"}
+{"time":"2021-09-15T15:36:49.216Z","method":"GET","path":"/todo"}
+{"time":"2021-09-15T15:37:14.819Z","method":"GET","path":"/todo"}
+{"time":"2021-09-15T15:37:22.946Z","method":"GET","path":"/todo"}
+{"time":"2021-09-15T15:43:33.686Z","method":"GET","path":"/todo"}
+{"time":"2021-09-15T15:43:33.830Z","method":"GET","path":"/favicon.ico"}
+{"time":"2021-09-15T15:44:15.352Z","method":"GET","path":"/todo"}
+{"time":"2021-09-15T15:44:21.505Z","method":"GET","path":"/todo"}
+{"time":"2021-09-15T15:44:22.531Z","method":"GET","path":"/todo"}
+{"time":"2021-09-15T15:44:22.713Z","method":"GET","path":"/todo"}
+{"time":"2021-09-15T15:44:22.869Z","method":"GET","path":"/todo"}
