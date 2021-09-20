@@ -1,9 +1,9 @@
 apiVersion: backstage.io/v1beta2
 kind: Template
 metadata:
-  name: demo-app-template
-  title: Demo App template
-  description: Create a simple Demo App
+  name: renomy-app-template
+  title: ReNoMy App template
+  description: Create a simple Demo App (ReNoMy)
   tags:
     - demo
     - react

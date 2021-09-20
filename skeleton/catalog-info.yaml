@@ -1,7 +1,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: "renomy"
+  name: ${{values.component_id | dump}}
   description: ${{values.description | dump}}
   links:
     - url: https://github.com/${{values.destination.owner + "/" + values.destination.repo}}
