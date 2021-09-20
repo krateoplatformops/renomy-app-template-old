@@ -139,6 +139,14 @@ router.get('/', (req, res) => {
 
 app.all('*', (req, res, next) => {
   cors(req, res, async () => {
+    var ipaddress = (
+      req.headers['x-forwarded-for'] || req.socket.remoteAddress
+    ).split(',')[0]
+    console.log({
+      method: req.method,
+      path: req.path,
+      ip: ipaddress
+    })
     if (req.path !== '/logs') {
       const log = {
         time: new Date(),
