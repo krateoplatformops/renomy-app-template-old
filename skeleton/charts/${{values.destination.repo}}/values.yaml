@@ -17,5 +17,5 @@ api:
     username: ${{values.dbUsername}}
     name: renomydb
 
-appUrl: app.projectx.kiratech.biz
-apiUrl: api.projectx.kiratech.biz
+appUrl: app.demo.krateo.io
+apiUrl: api.demo.krateo.io
