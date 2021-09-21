@@ -17,5 +17,5 @@ api:
     username: ${{values.dbUsername}}
     name: renomydb
 
-appUrl: app.demo.krateo.io
-apiUrl: api.demo.krateo.io
+appUrl: ${{values.appUrl}}
+apiUrl: ${{values.apiUrl}}

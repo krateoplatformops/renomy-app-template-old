@@ -34,10 +34,25 @@ spec:
           title: Database Username
           type: string
           description: Database Username
+          default: admin
         dbPassword:
           title: Database Password
           type: string
           description: Database Password
+
+    - title: Choose Url
+      required:
+        - appUrl
+        - apiUrl
+      properties:
+        appUrl:
+          title: App url
+          type: string
+          description: App url without https://
+        apiUrl:
+          title: Api Url
+          type: string
+          description: Api url without https://
 
     - title: Choose a location
       required:
@@ -65,6 +80,8 @@ spec:
           description: "{{ parameters.description }}"
           dbUsername: "{{ parameters.dbUsername }}"
           dbPassword: "{{ parameters.dbPassword }}"
+          appUrl: "{{ parameters.appUrl }}"
+          apiUrl: "{{ parameters.apiUrl }}"
           destination: "{{ parseRepoUrl parameters.repoUrl }}"
 
     - id: publish
