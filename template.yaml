@@ -21,6 +21,7 @@ spec:
         - description
         - dbUsername
         - dbPassword
+        - owner
       properties:
         component_id:
           title: Name
@@ -39,6 +40,14 @@ spec:
           title: Database Password
           type: string
           description: Database Password
+        owner:
+          title: Owner
+          type: string
+          description: Owner of the component
+          ui:field: OwnerPicker
+          ui:options:
+            allowedKinds:
+              - Group
 
     - title: Choose Url
       required:
@@ -82,6 +91,7 @@ spec:
           dbPassword: "{{ parameters.dbPassword }}"
           appUrl: "{{ parameters.appUrl }}"
           apiUrl: "{{ parameters.apiUrl }}"
+          owner: "{{ parameters.owner }}"
           destination: "{{ parseRepoUrl parameters.repoUrl }}"
 
     - id: publish

@@ -8,7 +8,7 @@ metadata:
   labels: {{- include "common.labels.standard" . | nindent 4 }}
   annotations:
     kubernetes.io/ingress.class: 'kong'
-    cert-manager.io/cluster-issuer: 'test-selfsigned'
+    # cert-manager.io/cluster-issuer: 'test-selfsigned'
 spec:
   rules:
     - host: {{ .Values.apiUrl }}
