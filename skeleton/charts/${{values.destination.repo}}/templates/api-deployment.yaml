@@ -15,6 +15,7 @@ spec:
     metadata:
       labels:
         app: renomy-api
+        component: {{ .Release.Namespace }}
     spec:
       containers:
         - name: renomy-api
