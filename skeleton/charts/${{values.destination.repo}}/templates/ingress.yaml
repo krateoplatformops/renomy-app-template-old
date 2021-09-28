@@ -6,6 +6,7 @@ kind: Ingress
 metadata:
   name: renomy-ingress
   labels: {{- include "common.labels.standard" . | nindent 4 }}
+    component: {{ .Release.Namespace }}
   annotations:
     kubernetes.io/ingress.class: 'kong'
     # cert-manager.io/cluster-issuer: 'test-selfsigned'
