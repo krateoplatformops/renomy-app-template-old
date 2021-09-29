@@ -17,3 +17,18 @@ spec:
   type: service
   lifecycle: experimental
   owner: ${{values.destination.owner | dump}}
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: todo-api
+  description: Todo API
+  tags:
+    - swagger
+    - rest
+spec:
+  type: openapi
+  lifecycle: experimental
+  owner: ${{values.owner | dump}}
+  definition:
+    $text: https://github.com/${{values.destination.owner + "/" + values.destination.repo}}/swagger.yaml
