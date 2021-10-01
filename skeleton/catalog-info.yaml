@@ -1,8 +1,9 @@
+# Frontend
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: ${{values.component_id | dump}}
-  description: "ReNoMy App Template"
+  name: ${{values.component_id}}-fe
+  description: ReNoMy Frontend
   links:
     - url: https://github.com/${{values.destination.owner + "/" + values.destination.repo}}
       title: ${{values.component_id | dump}}
@@ -17,11 +18,38 @@ spec:
   type: service
   lifecycle: experimental
   owner: ${{values.destination.owner | dump}}
+  consumesApis:
+    - ${{values.component_id}}-api
+  dependsOn: ["component:${{values.component_id}}-be"]
+---
+# Backend
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: ${{values.component_id}}-be
+  description: ReNoMy Backend
+  links:
+    - url: https://github.com/${{values.destination.owner + "/" + values.destination.repo}}
+      title: ${{values.component_id | dump}}
+      icon: "dashboard"
+  annotations:
+    github.com/project-slug: ${{values.destination.owner + "/" + values.destination.repo}}
+    backstage.io/techdocs-ref: dir:.
+    argocd/app-name: ${{values.component_id | dump}}
+    backstage.io/kubernetes-label-selector: "component=${{ values.component_id }}"
+    sonarqube.org/project-key: ${{values.destination.owner + "_" + values.destination.repo}}
+spec:
+  type: service
+  lifecycle: experimental
+  owner: ${{values.destination.owner | dump}}
+  providesApis:
+    - ${{values.component_id}}-api
+  dependsOn: ["resource:${{values.component_id}}-db"]
 ---
 apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
-  name: todo-api
+  name: ${{values.component_id}}-api
   description: Todo API
   tags:
     - swagger
@@ -30,5 +58,27 @@ spec:
   type: openapi
   lifecycle: experimental
   owner: ${{values.owner | dump}}
+  apiProvidedBy: ${{values.component_id}}-be
+  apiConsumedBy:
+    - ${{values.component_id}}-fe
   definition:
-    $text: https://github.com/${{values.destination.owner + "/" + values.destination.repo}}/swagger.yaml
+    $text: https://github.com/${{values.destination.owner + "/" + values.destination.repo}}/blob/main/swagger.yaml
+---
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: ${{values.component_id}}-system
+  description: AWS Cloud
+spec:
+  owner: ${{values.owner | dump}}
+  domain: default
+---
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: ${{values.component_id}}-db
+  description: Stores todos
+spec:
+  type: database
+  owner: ${{values.owner | dump}}
+  system: ${{values.component_id}}-system
