@@ -52,9 +52,9 @@ With this app template is provided a swagger.yaml file that you can import in an
 The first step is to register the plugin in your krateo platformops.
 The url to register the template is:
 
-````
-https://github.com/projectkerberus/renomy-app-template/blob/main/template.yaml```
-````
+```
+https://github.com/projectkerberus/renomy-app-template/blob/main/template.yaml
+```
 
 After the import you can view the plugin in the "create" page.
 ![Krateo Create](./docs/krateo_create.png 'Krateo Create')
