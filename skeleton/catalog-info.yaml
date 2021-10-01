@@ -52,7 +52,7 @@ metadata:
   name: ${{values.component_id}}-api
   description: Todo API
   tags:
-    - swagger
+    - openapi
     - rest
 spec:
   type: openapi
@@ -62,7 +62,7 @@ spec:
   apiConsumedBy:
     - ${{values.component_id}}-fe
   definition:
-    $text: https://github.com/${{values.destination.owner + "/" + values.destination.repo}}/blob/main/swagger.yaml
+    $text: https://github.com/${{values.destination.owner + "/" + values.destination.repo}}/blob/main/openapi.yaml
 ---
 apiVersion: backstage.io/v1alpha1
 kind: System

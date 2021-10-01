@@ -41,10 +41,7 @@ paths:
                   type: string
             examples:
               "0":
-                value: |-
-                  {
-                      "message": "test swagger"
-                  }
+                value: { "message": "test swagger" }
       responses:
         "200":
           description: Auto generated using Swagger Inspector
