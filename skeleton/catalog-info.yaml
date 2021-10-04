@@ -51,6 +51,10 @@ kind: API
 metadata:
   name: ${{values.component_id}}-api
   description: Todo API
+  links:
+    - url: https://krateo.io
+      title: "krateo.io"
+      icon: "dashboard"
   tags:
     - openapi
     - rest
