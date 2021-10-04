@@ -187,3 +187,10 @@ In Portworx dashboard you can view the renomy PV. By default PV claims 10 MB, bu
 The PV is used to save calls.log.
 
 ![Portworx](./docs/krateo_portworx.png 'Portworx')
+
+## Kuma
+
+In Kuma dashboard you can find 2 services and 2 proxies (api and app).
+![Kuma Services](./docs/krateo_kuma.png 'Kuma Services')
+
+![Kuma Proxies](./docs/krateo_kuma2.png 'Kuma Proxies')
