@@ -21,6 +21,7 @@ spec:
   consumesApis:
     - ${{values.component_id}}-api
   dependsOn: ["component:${{values.component_id}}-be"]
+  system: ${{values.component_id}}-system
 ---
 # Backend
 apiVersion: backstage.io/v1alpha1
@@ -45,6 +46,7 @@ spec:
   providesApis:
     - ${{values.component_id}}-api
   dependsOn: ["resource:${{values.component_id}}-db"]
+  system: ${{values.component_id}}-system
 ---
 apiVersion: backstage.io/v1alpha1
 kind: API
@@ -67,6 +69,7 @@ spec:
     - ${{values.component_id}}-fe
   definition:
     $text: https://github.com/${{values.destination.owner + "/" + values.destination.repo}}/blob/main/openapi.yaml
+  system: ${{values.component_id}}-system
 ---
 apiVersion: backstage.io/v1alpha1
 kind: System
@@ -76,12 +79,17 @@ metadata:
 spec:
   owner: ${{values.owner | dump}}
   domain: default
+  system: ${{values.component_id}}-system
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Resource
 metadata:
   name: ${{values.component_id}}-db
   description: Stores todos
+  links:
+    - url: https://krateo.io
+      title: "krateo.io"
+      icon: "dashboard"
 spec:
   type: database
   owner: ${{values.owner | dump}}

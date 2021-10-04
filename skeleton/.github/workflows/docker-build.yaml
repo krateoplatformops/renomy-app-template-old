@@ -99,6 +99,7 @@ jobs:
         run: |
           sed -i --regexp-extended '0,/version: *(.*)/{s//version: ${{ steps.bump_version.outputs.next-version }}/}' charts/${{github.event.repository.name}}/Chart.yaml
           sed -i --regexp-extended '0,/appVersion: *(.*)/{s//appVersion: ${{ steps.bump_version.outputs.next-version }}/}' charts/${{github.event.repository.name}}/Chart.yaml
+          sed -i --regexp-extended '0,/version: *(.*)/{s//"version": "${{ steps.bump_version.outputs.next-version }}",/}' package.json
       - name: Configure Git
         run: |
           git config user.name "$GITHUB_ACTOR"
