@@ -175,3 +175,15 @@ Here you can view providers and consumers of your api.
 
 ![Api Definition](./docs/krateo_api_definition.png 'Api Definition')
 In the definition tab you have a OpenAPI client (swagger) to test calls.
+
+## Grafana
+
+In the Grafana dashbaord you can view logs, create custom dashboard and more.
+![Grafana](./docs/krateo_grafana.png 'Grafana')
+
+## Portworx
+
+In Portworx dashboard you can view the renomy PV. By default PV claims 10 MB, but default volume size of portworx is 1 GB.
+The PV is used to save calls.log.
+
+![Portworx](./docs/krateo_portworx.png 'Portworx')
