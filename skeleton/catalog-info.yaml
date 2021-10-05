@@ -78,7 +78,7 @@ metadata:
   description: AWS Cloud
 spec:
   owner: ${{values.owner | dump}}
-  domain: default
+  domain: ${{values.component_id}}-domain
   system: ${{values.component_id}}-system
 ---
 apiVersion: backstage.io/v1alpha1
@@ -94,3 +94,11 @@ spec:
   type: database
   owner: ${{values.owner | dump}}
   system: ${{values.component_id}}-system
+---
+apiVersion: backstage.io/v1alpha1
+kind: Domain
+metadata:
+  name: ${{values.component_id}}-domain
+  description: ${{values.component_id}} domain
+spec:
+  owner: ${{values.owner | dump}}
