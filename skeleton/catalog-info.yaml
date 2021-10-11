@@ -17,7 +17,7 @@ metadata:
 spec:
   type: service
   lifecycle: experimental
-  owner: ${{values.destination.owner | dump}}
+  owner: ${{values.owner | dump}}
   consumesApis:
     - ${{values.component_id}}-api
   dependsOn: ["component:${{values.component_id}}-be"]
@@ -42,7 +42,7 @@ metadata:
 spec:
   type: service
   lifecycle: experimental
-  owner: ${{values.destination.owner | dump}}
+  owner: ${{values.owner | dump}}
   providesApis:
     - ${{values.component_id}}-api
   dependsOn: ["resource:${{values.component_id}}-db"]
