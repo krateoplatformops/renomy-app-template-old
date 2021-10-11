@@ -4,3 +4,4 @@ metadata:
   name: ${{values.component_id}}
   annotations:
     kuma.io/sidecar-injection: enabled
+    kuma.io/mesh: default
