@@ -20,7 +20,7 @@ spec:
         - component_id
         - description
         - dbUsername
-        - dbPassword
+        # - dbPassword
         - owner
       properties:
         component_id:
@@ -36,10 +36,10 @@ spec:
           type: string
           description: Database Username
           default: admin
-        dbPassword:
-          title: Database Password
-          type: string
-          description: Database Password
+        # dbPassword:
+        #   title: Database Password
+        #   type: string
+        #   description: Database Password
         owner:
           title: Owner
           type: string
@@ -88,7 +88,7 @@ spec:
           component_id: "{{ parameters.component_id }}"
           description: "{{ parameters.description }}"
           dbUsername: "{{ parameters.dbUsername }}"
-          dbPassword: "{{ parameters.dbPassword }}"
+          # dbPassword: "{{ parameters.dbPassword }}"
           appUrl: "{{ parameters.appUrl }}"
           apiUrl: "{{ parameters.apiUrl }}"
           owner: "{{ parameters.owner }}"
