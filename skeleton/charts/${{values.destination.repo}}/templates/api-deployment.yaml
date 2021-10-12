@@ -21,7 +21,7 @@ spec:
       containers:
         - name: renomy-api
           image: {{ .Values.images.api }}
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
           resources:
             requests:
               memory: "64Mi"
