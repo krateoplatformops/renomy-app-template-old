@@ -6,7 +6,6 @@ kind: Service
 metadata:
   name: api-svc
   labels: {{- include "common.labels.standard" . | nindent 4 }}
-    component: {{ .Release.Namespace }}
 spec:
   type: NodePort
   ports:

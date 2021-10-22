@@ -7,7 +7,6 @@ metadata:
   name: {{ .Release.Namespace }}
   labels:
     backstage.io/kubernetes-id: renomy
-    component: {{ .Release.Namespace }}
     {{- include "common.labels.standard" . | nindent 4 }}
 spec:
   forProvider:
